@@ -1,9 +1,12 @@
+import Link from 'next/link'
 
-const Post = ({ id, title, body }) => {
+const Post = ({ title, body, slug }) => {
   
   return(
     <>
-      <h1>{title}</h1>
+      <Link href="/posts/[slug]" as={`/posts/${slug}`}>
+        <a>{title}</a>
+      </Link>
       <p>{body}</p>
     </>
   )

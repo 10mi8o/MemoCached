@@ -1,5 +1,4 @@
 import Head from 'next/head'
-
 import Post from '../components/blog/Post' 
 import styles from '../styles/Home.module.css'
 
@@ -17,7 +16,7 @@ export default function Home(props) {
           { posts.map((post, id) => {
             return(
               <React.Fragment key={id}> 
-                <Post title={post.fields.title} body={post.fields.body} /> 
+                <Post title={post.fields.title} body={post.fields.body} slug={post.fields.slug} /> 
               </React.Fragment>
             )
           })}
