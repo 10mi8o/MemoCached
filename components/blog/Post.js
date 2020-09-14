@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ReactMarkdown from 'react-markdown'
 
 const Post = ({ title, body, slug }) => {
   
@@ -7,7 +8,7 @@ const Post = ({ title, body, slug }) => {
       <Link href="/posts/[slug]" as={`/posts/${slug}`}>
         <a>{title}</a>
       </Link>
-      <p>{body}</p>
+      <ReactMarkdown source={body} />
     </>
   )
 }
