@@ -1,4 +1,6 @@
 import Head from 'next/head'
+
+import Post from '../components/blog/Post' 
 import styles from '../styles/Home.module.css'
 
 import { fetchAllPosts } from '../services/blog'
@@ -14,10 +16,9 @@ export default function Home(props) {
       <div>
           { posts.map((post, id) => {
             return(
-              <div key={id}>
-              <p>{post.fields.title}</p>
-              <p>{post.fields.title}</p>
-            </div>     
+              <React.Fragment key={id}> 
+                <Post title={post.fields.title} body={post.fields.body} /> 
+              </React.Fragment>
             )
           })}
       </div>
