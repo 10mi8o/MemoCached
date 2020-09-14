@@ -7,11 +7,11 @@ const client = require('contentful').createClient({
 })
 
 // Contentfulにポストされたエントリを全て取得する
-export async function fetchAllEntries() {
-  const articles = await client.getEntries()
-  if (articles.items) {
-    return articles.items
+export async function fetchAllPosts() {
+  const posts = await client.getEntries()
+  if (posts.items) {
+    return posts.items
   } else {
-    console.log('Error getting Articles')
+    console.log('Error getting Posts')
   }
 }

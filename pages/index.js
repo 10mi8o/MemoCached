@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-import { fetchAllEntries } from '../services/blog'
+import { fetchAllPosts } from '../services/blog'
 
 export default function Home(props) {
-  const entries = props.entries
-  console.log(entries)
+  const posts = props.posts
   return (
     <div>
       <Head>
@@ -13,11 +12,11 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
-          { entries.map((entry, id) => {
+          { posts.map((post, id) => {
             return(
               <div key={id}>
-              <p>{entry.fields.title}</p>
-              <p>{entry.fields.title}</p>
+              <p>{post.fields.title}</p>
+              <p>{post.fields.title}</p>
             </div>     
             )
           })}
@@ -27,11 +26,11 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const res = await fetchAllEntries()
-  const entries = await res.map( entry => entry )
+  const res = await fetchAllPosts()
+  const posts = await res.map( post => post )
   return {
     props: {
-      entries
+      posts
     }
   }
 }
