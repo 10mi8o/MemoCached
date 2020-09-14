@@ -1,12 +1,16 @@
 import { fetchAllPosts, fetchPostBySlug } from '../../services/blog'
+import Link from 'next/link'
 import Post from '../../components/blog/Post'
 
 export default function PostDetail(props) {
   const post = props.post.items
-  
+
   return(
     <>
       <Post title={post[0].fields.title} body={post[0].fields.body} />
+      <Link href="/">
+        <a>一覧へ戻る</a>
+      </Link>
     </>
   )
 }
