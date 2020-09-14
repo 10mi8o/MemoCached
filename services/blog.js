@@ -12,6 +12,15 @@ export async function fetchAllPosts() {
   if (posts.items) {
     return posts.items
   } else {
-    console.log('Error getting Posts')
+    console.log('Error getting Posts.')
   }
+}
+
+// Contentfulにポストされた記事をSlugで１件抽出
+export async function fetchPostBySlug(slug) {
+  const post = await client.getEntries({
+    content_type: 'blogPost',
+    'fields.slug': slug
+  })
+  return post
 }
