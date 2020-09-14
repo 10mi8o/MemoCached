@@ -6,7 +6,7 @@ const client = require('contentful').createClient({
   accessToken: accessToken,
 })
 
-// Contentfulにポストされたエントリを全て取得する
+// Contentfulにポストされた記事を全て取得する
 export async function fetchAllPosts() {
   const posts = await client.getEntries()
   if (posts.items) {
