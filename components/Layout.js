@@ -7,7 +7,9 @@ const Layout = ({children}) => {
         <title>MemoCached</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {children}
+      <div className="container">
+        {children}
+      </div>
     </>
   )
 }

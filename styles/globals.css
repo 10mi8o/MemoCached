@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.container {
+  width: 680px;
+  margin: 0 auto;
+}
+
+.container img {
+  max-width: 680px;
+}
