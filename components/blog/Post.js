@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import ReactMarkdown from 'react-markdown'
 
-const Post = ({ title, body, slug }) => {
+const Post = ({ title, body, image }) => {
   
   return(
     <>
-      <Link href="/posts/[slug]" as={`/posts/${slug}`}>
-        <a>{title}</a>
-      </Link>
-      <ReactMarkdown source={body} />
+      <h1>{title}</h1>
+      <div>
+        <img src={image.file.url} alt={image.description}/>
+      </div>
+      <ReactMarkdown source={body}/>
     </>
   )
 }

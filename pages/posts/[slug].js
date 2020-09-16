@@ -5,10 +5,12 @@ import Post from '../../components/blog/Post'
 
 export default function PostDetail(props) {
   const post = props.post.items
+  const image = post[0].fields.image.fields // 調査: より良い書き方があるはず
+  console.log(post[0].fields.image.fields)
 
   return(
     <Layout>
-      <Post title={post[0].fields.title} body={post[0].fields.body} />
+      <Post title={post[0].fields.title} body={post[0].fields.body} image={image} />
       <Link href="/">
         <a>一覧へ戻る</a>
       </Link>
@@ -20,6 +22,7 @@ export async function getStaticProps({params}) {
 
   const slug = params.slug
 
+  // １件の記事を取得する
   const post = await fetchPostBySlug(slug)
   return {
     props: {
