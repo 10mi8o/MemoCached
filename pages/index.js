@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
+import PostList from '../components/blog/PostList'
 import Label from '../components/common/Label'
 
 import styles from '../styles/Home.module.css'
@@ -18,12 +19,7 @@ export default function Home(props) {
                 <React.Fragment key={id}>
                   <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
                     <a>
-                      <div>
-                        <img src={post.fields.image.fields.file.url} alt=""/>
-                      </div>
-                      <h2>
-                        {post.fields.title}
-                      </h2>
+                      <PostList title={post.fields.title} img_url={post.fields.image.fields.file.url} />
                     </a>
                   </Link>
 
