@@ -1,7 +1,6 @@
-import Head from 'next/head'
 import Link from 'next/link'
-import Post from '../components/blog/Post' 
 import Layout from '../components/Layout'
+import Label from '../components/common/Label'
 
 import styles from '../styles/Home.module.css'
 
@@ -10,7 +9,6 @@ import { fetchAllPosts } from '../services/blog'
 //記事一覧ページ
 export default function Home(props) {
   const posts = props.posts
-  console.log(posts)
 
   return (
       <Layout>
@@ -26,18 +24,27 @@ export default function Home(props) {
                       <h2>
                         {post.fields.title}
                       </h2>
-                      <p>
-                        Category: {post.fields.category.fields.name}
-                      </p>
-                      {post.fields.tag.map((tag_name, id)=> {
-                        return(
-                          <div key={id}>
-                          tag: {tag_name.fields.name}
-                          </div>
-                        )
-                      })}
                     </a>
                   </Link>
+
+                  <Link href="/posts/category/[slug]" as={`/posts/category/${post.fields.category.fields.slug}`}>
+                    <a>
+                      <Label name={post.fields.category.fields.name}/>
+                    </a>
+                  </Link>
+
+                  {post.fields.tag.map((tag_name, id)=> {
+                    return(
+                      <div key={id}>
+                        <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
+                        <a>
+                          <Label name={tag_name.fields.name}/>
+                        </a>
+                        </Link>
+                      </div>
+                    )
+                  })}
+
                 </React.Fragment>
               )
             })}
@@ -47,8 +54,9 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const res = await fetchAllPosts()
-  const posts = await res.map( post => post )
+  const posts = await fetchAllPosts()
+  // const posts = await res.map( post => post )
+
   return {
     props: {
       posts
