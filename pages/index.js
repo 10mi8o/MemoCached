@@ -10,7 +10,7 @@ import { fetchAllPosts } from '../services/blog'
 //記事一覧ページ
 export default function Home(props) {
   const posts = props.posts
-  console.log(posts);
+  console.log(posts)
 
   return (
       <Layout>
@@ -26,6 +26,16 @@ export default function Home(props) {
                       <h2>
                         {post.fields.title}
                       </h2>
+                      <p>
+                        Category: {post.fields.category.fields.name}
+                      </p>
+                      {post.fields.tag.map((tag_name, id)=> {
+                        return(
+                          <div key={id}>
+                          tag: {tag_name.fields.name}
+                          </div>
+                        )
+                      })}
                     </a>
                   </Link>
                 </React.Fragment>
