@@ -1,12 +1,18 @@
-const PostList = ({title, img_url}) => {
+import Date from '../common/Date'
+
+const PostList = ({title, createdAt, img_url}) => {
   return(
     <div>
       <figure>
         <img className="w-full" src={img_url} alt=""/>
       </figure>
-      <h2 className="font-bold text-xl mb-2 px-6 py-4">
-        {title}
-      </h2>
+      <div className="mb-2 px-6 py-4">
+        <Date dateString={createdAt} />
+        <h2 className="font-bold text-xl">
+          {title}
+        </h2>
+      </div>
+
     </div>
   )
 }

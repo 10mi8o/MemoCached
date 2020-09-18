@@ -19,7 +19,7 @@ export default function Home(props) {
           <div className="max-w-sm rounded overflow-hidden shadow-lg">
             <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
               <a>
-                <PostList title={post.fields.title} img_url={post.fields.image.fields.file.url} />
+                <PostList title={post.fields.title} createdAt={post.sys.createdAt} img_url={post.fields.image.fields.file.url} />
               </a>
             </Link>
 
