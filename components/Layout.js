@@ -11,7 +11,7 @@ const Layout = ({children}) => {
       </Head>
       <Header />
       <div className="py-10">
-        <div className="container flex flex-wrap">
+        <div className="container flex flex-wrap m-auto">
           {children}
         </div>
       </div>

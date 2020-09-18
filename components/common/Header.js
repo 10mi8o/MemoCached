@@ -1,8 +1,8 @@
 const Header = () => {
   return(
     <>
-      <header>
-        Header領域です
+      <header className="py-10 text-center">
+        <h1 className="font-black line-through">Memo Cached</h1>
       </header>
     </>
   )

@@ -5,10 +5,10 @@ const Post = ({ title, body, image }) => {
   
   return(
     <>
-      <h1>{title}</h1>
-      <div>
+      <figure>
         <img src={image.file.url} alt={image.description}/>
-      </div>
+      </figure>
+      <h1>{title}</h1>
       <ReactMarkdown source={body}/>
     </>
   )
