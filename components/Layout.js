@@ -10,8 +10,10 @@ const Layout = ({children}) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className="container">
-        {children}
+      <div className="py-10">
+        <div className="container flex flex-wrap">
+          {children}
+        </div>
       </div>
       <Footer />
     </>

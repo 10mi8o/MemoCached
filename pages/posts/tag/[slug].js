@@ -1,26 +1,34 @@
 import { fetchAllPosts, fetchPostByTag, fetchTag } from '../../../services/blog'
 import Link from 'next/link'
 import Layout from '../../../components/Layout'
+import PostList from '../../../components/blog/PostList'
+import Label from '../../../components/common/Label'
 
 export default function PostDetail(props) {
   const posts = props.posts.items
-
+  console.log(posts)
   return(
     <Layout>
       {posts.map((post, id) => {
         return(
-          <React.Fragment key={id}>
-            <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
-              <a>
-              <div>
-                <img src={post.fields.image.fields.file.url} alt=""/>
-              </div>
-              <h1>
-                {post.fields.title}
-              </h1>
-              </a>
-            </Link>
-          </React.Fragment>
+          <div key={id} className="w-1/3 px-2 mb-10">
+            <div className="max-w-sm rounded overflow-hidden shadow-lg">
+              <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
+                <a>
+                  <PostList title={post.fields.title} img_url={post.fields.image.fields.file.url} />
+                </a>
+              </Link>
+              {post.fields.tag.map((tag_name, id) => {
+                return(
+                  <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
+                    <a>
+                      <Label name={tag_name.fields.name}/>
+                    </a>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
         )
       })}
 

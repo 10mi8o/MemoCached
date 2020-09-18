@@ -12,40 +12,39 @@ export default function Home(props) {
   const posts = props.posts
 
   return (
-      <Layout>
-        <div>
-            { posts.map((post, id) => {
-              return (
-                <React.Fragment key={id}>
-                  <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
-                    <a>
-                      <PostList title={post.fields.title} img_url={post.fields.image.fields.file.url} />
-                    </a>
+    <Layout>
+      { posts.map((post, id) => {
+        return (   
+          <div className="w-1/3 px-2 mb-10">
+          <div key={id} className="max-w-sm rounded overflow-hidden shadow-lg">
+            <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
+              <a>
+                <PostList title={post.fields.title} img_url={post.fields.image.fields.file.url} />
+              </a>
+            </Link>
+
+            {/* <Link href="/posts/category/[slug]" as={`/posts/category/${post.fields.category.fields.slug}`}>
+              <a>
+                <Label name={post.fields.category.fields.name}/>
+              </a>
+            </Link> */}
+
+            {post.fields.tag.map((tag_name, id)=> {
+              return(
+                <div key={id}>
+                  <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
+                  <a>
+                    <Label name={tag_name.fields.name}/>
+                  </a>
                   </Link>
-
-                  <Link href="/posts/category/[slug]" as={`/posts/category/${post.fields.category.fields.slug}`}>
-                    <a>
-                      <Label name={post.fields.category.fields.name}/>
-                    </a>
-                  </Link>
-
-                  {post.fields.tag.map((tag_name, id)=> {
-                    return(
-                      <div key={id}>
-                        <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
-                        <a>
-                          <Label name={tag_name.fields.name}/>
-                        </a>
-                        </Link>
-                      </div>
-                    )
-                  })}
-
-                </React.Fragment>
+                </div>
               )
             })}
-        </div>
-      </Layout>
+            </div>
+          </div>
+        )
+      })}
+    </Layout>
   )
 }
 
