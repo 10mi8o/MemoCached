@@ -1,6 +1,8 @@
 import { fetchAllPosts, fetchPostBySlug } from '../../services/blog'
+import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../../components/Layout'
+import Header from '../../components/common/Header'
+import Footer from '../../components/common/Footer'
 import Post from '../../components/blog/Post'
 
 export default function PostDetail(props) {
@@ -9,12 +11,22 @@ export default function PostDetail(props) {
   console.log(post[0].fields.image.fields)
 
   return(
-    <Layout>
-      <Post title={post[0].fields.title} body={post[0].fields.body} image={image} />
-      <Link href="/">
-        <a>一覧へ戻る</a>
-      </Link>
-    </Layout>
+    <>
+      <Head>
+        <title>MemoCached</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header />
+      <div id="post_detail">
+        <div className="container">
+        <Post title={post[0].fields.title} body={post[0].fields.body} image={image} />
+        <Link href="/">
+          <a>一覧へ戻る</a>
+        </Link>
+        </div>
+      </div>
+      <Footer />
+    </>
   )
 }
 

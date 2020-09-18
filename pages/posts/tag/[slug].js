@@ -31,10 +31,6 @@ export default function PostDetail(props) {
           </div>
         )
       })}
-
-      <Link href="/">
-        <a>一覧へ戻る</a>
-      </Link>
     </Layout>
   )
 }
