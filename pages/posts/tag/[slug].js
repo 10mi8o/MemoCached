@@ -20,11 +20,13 @@ export default function PostDetail(props) {
               </Link>
               {post.fields.tag.map((tag_name, id) => {
                 return(
-                  <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
-                    <a>
-                      <Label name={tag_name.fields.name}/>
-                    </a>
-                  </Link>
+                  <React.Fragment key={id}>
+                    <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
+                      <a>
+                        <Label name={tag_name.fields.name}/>
+                      </a>
+                    </Link>
+                  </React.Fragment>
                 )
               })}
             </div>
