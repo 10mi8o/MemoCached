@@ -19,9 +19,18 @@ a {
   min-height: 100vh;
 }
 
+
+header {
+  font-size: 2.5rem;
+}
+
 footer {
   margin-top: auto;
   background-color: #bddef0;
+}
+
+#post_detail {
+  margin-bottom: 15rem;
 }
 
 #post_detail .container {
@@ -31,12 +40,16 @@ footer {
 
 #post_detail .container img {
   width: 100%;
+  margin: 20px 0;
 }
 
 #post_detail .container h1 {
+  font-size: 32px;
+  font-weight: 700;
   margin: 1rem 0;
 }
 
 #post_detail .container p {
+  font-size: 18px;
   line-height: 2.5;
 }
