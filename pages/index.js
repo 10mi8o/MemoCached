@@ -15,7 +15,7 @@ export default function Home(props) {
     <Layout>
       { posts.map((post, id) => {
         return (   
-          <div key={id} className="w-1/3 px-2 mb-10">
+          <div key={id} className="w-1/3 px-2 mb-10 flex">
           <div className="max-w-sm rounded overflow-hidden shadow-lg">
             <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
               <a>
