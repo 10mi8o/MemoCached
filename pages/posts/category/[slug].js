@@ -1,3 +1,9 @@
+export default function PostDetail() {
+  return(
+    <>カテゴリページ</>
+  )
+} 
+
 // import { fetchAllPosts, fetchPostByCategory, fetchCategory } from '../../../services/blog'
 // import Link from 'next/link'
 // import Layout from '../../../components/Layout'
