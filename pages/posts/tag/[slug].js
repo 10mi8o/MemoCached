@@ -15,7 +15,7 @@ export default function PostDetail(props) {
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
                 <a>
-                  <PostList title={post.fields.title} img_url={post.fields.image.fields.file.url} />
+                  <PostList title={post.fields.title} createdAt={post.sys.createdAt} img_url={post.fields.image.fields.file.url} />
                 </a>
               </Link>
               {post.fields.tag.map((tag_name, id) => {
@@ -33,6 +33,13 @@ export default function PostDetail(props) {
           </div>
         )
       })}
+      <Link href="/">
+        <a>
+          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-12 rounded">
+            一覧へ戻る
+          </button>
+        </a>
+      </Link>
     </Layout>
   )
 }

@@ -21,7 +21,11 @@ export default function PostDetail(props) {
         <div className="container">
         <Post title={post[0].fields.title} body={post[0].fields.body} image={image} />
         <Link href="/">
-          <a>一覧へ戻る</a>
+          <a>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-12 rounded">
+              一覧へ戻る
+            </button>
+          </a>
         </Link>
         </div>
       </div>
