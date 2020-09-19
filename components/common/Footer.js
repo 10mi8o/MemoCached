@@ -2,9 +2,9 @@ const Footer = () => {
   return(
     <>
       <footer>
-        <p className="text-center py-20">
-          MemoCachedはWeb開発にまつわる情報をを発信するブログです。
-        </p>
+        <small className="text-center">
+          © 2020 memochached
+        </small>
       </footer>
     </>
   )
