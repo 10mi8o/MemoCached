@@ -28,18 +28,19 @@ export default function Home(props) {
                 <Label name={post.fields.category.fields.name}/>
               </a>
             </Link> */}
-
-            {post.fields.tag.map((tag_name, id)=> {
-              return(
-                <div key={id}>
-                  <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
-                  <a>
-                    <Label name={tag_name.fields.name}/>
-                  </a>
-                  </Link>
-                </div>
-              )
-            })}
+              <div className="flex px-4 py-4">
+                {post.fields.tag.map((tag_name, id)=> {
+                  return(
+                    <div key={id}>
+                      <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
+                      <a>
+                        <Label name={tag_name.fields.name} />
+                      </a>
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           </div>
         )
