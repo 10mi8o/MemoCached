@@ -1,5 +1,5 @@
 // import { fetchLimitPosts } from '../../../services/blog'
-// import Layout from '../../../components/Layout'
+import Layout from '../../../components/Layout'
 // import Link from 'next/link'
 // import PostList from '../../../components/blog/PostList'
 // import Label from '../../../components/common/Label'
