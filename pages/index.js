@@ -1,7 +1,5 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
-import PostList from '../components/blog/PostList'
-import Label from '../components/common/Label'
 import { fetchAllPosts } from '../services/blog'
 import Card from '../components/common/molecules/Card'
 
