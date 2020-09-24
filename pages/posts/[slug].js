@@ -7,8 +7,8 @@ import Post from '../../components/blog/Post'
 
 export default function PostDetail(props) {
   const post = props.post.items
-  const image = post[0].fields.image.fields // 調査: より良い書き方があるはず
-  console.log(post[0].fields.image.fields)
+  // const image = post[0].fields.image.fields // 調査: より良い書き方があるはず
+  // console.log(post[0].fields.image.fields)
 
   return(
     <>
@@ -19,7 +19,12 @@ export default function PostDetail(props) {
       <Header />
       <div id="post_detail">
         <div className="container">
-        <Post title={post[0].fields.title} body={post[0].fields.body} image={image} />
+        <Post 
+          title={post[0].fields.title} 
+          body={post[0].fields.body} 
+          img_url={post[0].fields.image?.fields === undefined ? "" : post[0].fields.image.fields} 
+          category={post[0].fields.category.fields.slug}
+        />
         <Link href="/">
           <a>
             <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 my-12 border border-gray-400 rounded shadow">

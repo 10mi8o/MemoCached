@@ -18,6 +18,16 @@ export async function fetchAllPosts() {
   }
 }
 
+// ページネーション周りの実装は要検討
+const MAX_ENTRY = 8;
+export async function fetchLimitPosts() {
+  const posts = await client.getEntries({
+    content_type: 'blogPost',
+    limit: MAX_ENTRY,
+  })
+  return posts.items;
+}
+
 // Contentfulにポストされた記事をSlugで１件抽出
 export async function fetchPostBySlug(slug) {
   const post = await client.getEntries({
@@ -28,13 +38,13 @@ export async function fetchPostBySlug(slug) {
 }
 
 // slugで一致するCategoryを抽出
-export async function fetchCategory(slug) {
-  const category = await client.getEntries({
-    content_type: 'category',
-    'fields.slug': slug
-  })
-  return category
-}
+// export async function fetchCategory(slug) {
+//   const category = await client.getEntries({
+//     content_type: 'category',
+//     'fields.slug': slug
+//   })
+//   return category
+// }
 
 // slugで一致するTagを抽出
 export async function fetchTag(slug) {
@@ -46,14 +56,14 @@ export async function fetchTag(slug) {
 }
 
 // Categoryで記事を抽出
-export async function fetchPostByCategory(id) {
-  const posts = await client.getEntries({
-    content_type: 'blogPost',
-    'fields.category.sys.id': id
-  })
-  // console.log(posts.items[0].fields.category.fields.slug)
-  return posts
-}
+// export async function fetchPostByCategory(id) {
+//   const posts = await client.getEntries({
+//     content_type: 'blogPost',
+//     'fields.category.sys.id': id
+//   })
+//   // console.log(posts.items[0].fields.category.fields.slug)
+//   return posts
+// }
 
 // Tagで記事を抽出
 export async function fetchPostByTag(id) {

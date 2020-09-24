@@ -1,6 +1,14 @@
 import Date from '../common/Date'
 
-const PostList = ({title, createdAt, img_url}) => {
+const PostList = ({title, createdAt, img_url, category}) => {
+
+  //categoryによってデフォルトのimgを出し分け
+  if(img_url === "" && category === 'react') {
+    img_url = "/images/react_bnr.png"
+  } else if (img_url === "" && category === 'javascript') {
+    img_url = "/images/js_bnr.png"
+  }
+
   return(
     <div>
       <figure>
@@ -12,7 +20,6 @@ const PostList = ({title, createdAt, img_url}) => {
           {title}
         </h2>
       </div>
-
     </div>
   )
 }
