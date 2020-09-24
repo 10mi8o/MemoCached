@@ -18,6 +18,16 @@ export async function fetchAllPosts() {
   }
 }
 
+// ページネーション周りの実装は要検討
+const MAX_ENTRY = 8;
+export async function fetchLimitPosts() {
+  const posts = await client.getEntries({
+    content_type: 'blogPost',
+    limit: MAX_ENTRY,
+  })
+  return posts.items;
+}
+
 // Contentfulにポストされた記事をSlugで１件抽出
 export async function fetchPostBySlug(slug) {
   const post = await client.getEntries({

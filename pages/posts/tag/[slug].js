@@ -9,37 +9,43 @@ export default function PostDetail(props) {
   console.log(posts)
   return(
     <Layout>
-      {posts.map((post, id) => {
-        return(
-          <div key={id} className="w-1/3 px-2 mb-10">
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-              <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
-                <a>
-                  <PostList title={post.fields.title} createdAt={post.sys.createdAt} img_url={post.fields.image.fields.file.url} />
-                </a>
-              </Link>
-              {post.fields.tag.map((tag_name, id) => {
-                return(
-                  <React.Fragment key={id}>
-                    <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
-                      <a>
-                        <Label name={tag_name.fields.name}/>
-                      </a>
-                    </Link>
-                  </React.Fragment>
-                )
-              })}
-            </div>
-          </div>
-        )
-      })}
-      <Link href="/">
-        <a>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-12 rounded">
-            一覧へ戻る
-          </button>
-        </a>
-      </Link>
+      <div className="container m-auto py-10">
+        <div className="flex flex-wrap">
+          {posts.map((post, id) => {
+            return(
+              <div key={id} className="w-1/3 px-2 flex mb-10">
+                <div className="max-w-sm rounded overflow-hidden shadow-lg">
+                  <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
+                    <a>
+                      <PostList title={post.fields.title} createdAt={post.sys.createdAt} img_url={post.fields.image.fields.file.url} />
+                    </a>
+                  </Link>
+                  <div className="flex px-4 py-4">
+                  {post.fields.tag.map((tag_name, id) => {
+                    return(
+                      <React.Fragment key={id}>
+                        <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
+                          <a>
+                            <Label name={tag_name.fields.name}/>
+                          </a>
+                        </Link>
+                      </React.Fragment>
+                    )
+                  })}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+        <Link href="/">
+          <a>
+            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 my-12 border border-gray-400 rounded shadow">
+              一覧へ戻る
+            </button>
+          </a>
+        </Link>
+      </div>
     </Layout>
   )
 }

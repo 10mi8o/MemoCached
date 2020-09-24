@@ -26,7 +26,8 @@ header {
 
 footer {
   margin-top: auto;
-  background-color: #bddef0;
+  background-color: #000000;
+  color: #fff;
 }
 
 #post_detail {
@@ -47,9 +48,48 @@ footer {
   font-size: 32px;
   font-weight: 700;
   margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: solid;
+}
+
+#post_detail .container h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 1.8rem 0 1rem 0;
+  padding-left: 1rem;
+  border-left: solid 10px;
+}
+
+#post_detail .container h3 {
+  font-size: 18px;
+  font-weight: 700;
 }
 
 #post_detail .container p {
   font-size: 18px;
-  line-height: 2.5;
+  line-height: 2.2;
+  margin-bottom: 1rem;
+}
+
+#post_detail .container a {
+  display: inline-block;
+  color: #48bfee;
+  margin-bottom: 1.2rem;
+}
+
+#post_detail .container blockquote {
+  margin: 0;
+  margin-bottom: 16px;
+  margin-top: 0;
+  border-left: .25em solid #dfe2e5;
+  color: #6a737d;
+  padding: 0 1em;
+}
+
+#post_detail .container blockquote>:first-child {
+  margin-top: 0;
+}
+
+#post_detail .container blockquote>:last-child {
+  margin-bottom: 0;
 }
