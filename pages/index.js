@@ -7,6 +7,7 @@ import { fetchAllPosts } from '../services/blog'
 //記事一覧ページ
 export default function Home(props) {
   const posts = props.posts
+  const LIMIT = posts.length;
 
   return (
     <Layout>
@@ -17,7 +18,12 @@ export default function Home(props) {
             <div className="max-w-sm rounded overflow-hidden shadow-lg">
               <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
                 <a>
-                  <PostList title={post.fields.title} createdAt={post.sys.createdAt} img_url={post.fields.image.fields.file.url} />
+                  <PostList 
+                    title={post.fields.title} 
+                    createdAt={post.sys.createdAt} 
+                    img_url={post.fields.image?.fields.file.url === undefined ? "" : post.fields.image.fields.file.url}
+                    category={post.fields.category.fields.slug}
+                  />
                 </a>
               </Link>
                 <div className="flex px-4 py-4">
@@ -37,9 +43,11 @@ export default function Home(props) {
           )
         )}
         </div>
-          <div className="text-center">
-            <Link href="/posts/archive/[num]" as="/posts/archive/1"><a>Archive &gt;&gt;</a></Link>
-          </div>
+        { LIMIT <= 16 ? '' :
+        <div className="text-center">
+          <Link href="/posts/archive/[num]" as="/posts/archive/1"><a>Archive &gt;&gt;</a></Link>
+        </div>
+        }
       </div>
     </Layout>
   )

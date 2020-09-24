@@ -6,12 +6,24 @@ const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language="javascript" style={darcula}>{value}</SyntaxHighlighter>;
 };
 
-const Post = ({ title, body, image }) => {
+const Post = ({ title, body, img_url, category }) => {
+
+  //categoryによってデフォルトのimgを出し分け
+  if(img_url === "" && category === 'react') {
+    img_url = "/images/react_bnr.png"
+  } else if (img_url === "" && category === 'javascript') {
+    img_url = "/images/js_bnr.png"
+  } else {
+    img_url = img_url.file.url
+  }
 
   return(
     <>
       <figure>
-        <img src={image.file.url} alt={image.description}/>
+        <img 
+          src={img_url} 
+          // alt={image.description}
+        />
       </figure>
       <h1>{title}</h1>
       <ReactMarkdown source={body} renderers={{ code: CodeBlock }}/>
