@@ -1,4 +1,4 @@
-import Date from '../common/Date'
+import Date from 'components/common/Date'
 
 const PostList = ({title, createdAt, img_url, category}) => {
 

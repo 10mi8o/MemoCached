@@ -1,8 +1,7 @@
-import { fetchAllPosts, fetchPostByTag, fetchTag } from '../../../services/blog'
+import { fetchAllPosts, fetchPostByTag, fetchTag } from 'services/blog'
 import Link from 'next/link'
-import Layout from '../../../components/Layout'
-import PostList from '../../../components/blog/PostList'
-import Label from '../../../components/common/Label'
+import Layout from 'components/Layout'
+import Card from 'components/common/molecules/Card'
 
 export default function PostDetail(props) {
   const posts = props.posts.items
@@ -11,36 +10,7 @@ export default function PostDetail(props) {
     <Layout>
       <div className="container m-auto">
         <div className="flex flex-wrap">
-          {posts.map((post, id) => (
-              <div key={id} className="w-1/3 px-2 flex mb-10">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                  <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
-                    <a>
-                      <PostList 
-                        title={post.fields.title} 
-                        createdAt={post.sys.createdAt} 
-                        img_url={post.fields.image?.fields.file.url === undefined ? "" : post.fields.image.fields.file.url}
-                        category={post.fields.category.fields.slug}
-                      />
-                    </a>
-                  </Link>
-                  <div className="flex px-4 py-4">
-                  {post.fields.tag.map((tag_name, id) => {
-                    return(
-                      <React.Fragment key={id}>
-                        <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
-                          <a>
-                            <Label name={tag_name.fields.name}/>
-                          </a>
-                        </Link>
-                      </React.Fragment>
-                    )
-                  })}
-                  </div>
-                </div>
-              </div>
-            )
-          )}
+          <Card props={posts}/>
         </div>
         <Link href="/">
           <a>
