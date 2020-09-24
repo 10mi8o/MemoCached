@@ -1,22 +1,14 @@
 import { fetchAllPosts, fetchPostBySlug } from '../../services/blog'
-import Head from 'next/head'
 import Link from 'next/link'
-import Header from '../../components/common/Header'
-import Footer from '../../components/common/Footer'
+import Layout from '../../components/Layout'
 import Post from '../../components/blog/Post'
 
 export default function PostDetail(props) {
   const post = props.post.items
   // const image = post[0].fields.image.fields // 調査: より良い書き方があるはず
   // console.log(post[0].fields.image.fields)
-
   return(
-    <>
-      <Head>
-        <title>MemoCached</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
+    <Layout>
       <div id="post_detail">
         <div className="container">
         <Post 
@@ -34,8 +26,7 @@ export default function PostDetail(props) {
         </Link>
         </div>
       </div>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 
