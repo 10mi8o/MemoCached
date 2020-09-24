@@ -6,13 +6,12 @@ import Label from '../../../components/common/Label'
 
 export default function PostDetail(props) {
   const posts = props.posts.items
-  console.log(posts)
+  
   return(
     <Layout>
       <div className="container m-auto py-10">
         <div className="flex flex-wrap">
-          {posts.map((post, id) => {
-            return(
+          {posts.map((post, id) => (
               <div key={id} className="w-1/3 px-2 flex mb-10">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
                   <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
@@ -36,7 +35,7 @@ export default function PostDetail(props) {
                 </div>
               </div>
             )
-          })}
+          )}
         </div>
         <Link href="/">
           <a>

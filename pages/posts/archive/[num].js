@@ -1,23 +1,20 @@
-import { fetchLimitPosts, fetchPostByTag, fetchTag } from '../../../services/blog'
+import { fetchLimitPosts } from '../../../services/blog'
 import Layout from '../../../components/Layout'
 import Link from 'next/link'
 import PostList from '../../../components/blog/PostList'
 import Label from '../../../components/common/Label'
 import Pager from '../../../components/common/Pager'
 
-const COUNT_PER_PAGE = 3 
-
+const COUNT_PER_PAGE = 3
 
 export default function PostDetail(props) {
-  console.log(props)
   const posts = props.posts
 
   return(
     <Layout>
       <div className="container m-auto py-10">
         <div className="flex flex-wrap">
-          {posts.map((post, id) => {
-          return(
+          {posts.map((post, id) => (
             <div key={id} className="w-1/3 px-2 mb-10 flex">
               <div className="max-w-sm rounded overflow-hidden shadow-lg">
                 <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
@@ -25,10 +22,8 @@ export default function PostDetail(props) {
                     <PostList  title={post.fields.title} createdAt={post.sys.createdAt} img_url={post.fields.image.fields.file.url} />
                   </a>
                 </Link>
-
                 <div className="flex px-4 py-4">
-                {post.fields.tag.map((tag_name, id)=> {
-                  return(
+                {post.fields.tag.map((tag_name, id)=> (
                     <div key={id}>
                       <Link href="/posts/tag/[slug]" as={`/posts/tag/${tag_name.fields.slug}`}>
                       <a>
@@ -37,13 +32,11 @@ export default function PostDetail(props) {
                       </Link>
                     </div>
                   )
-                })}
+                )}
               </div>
-
               </div>
             </div>
-              )
-            }
+            )
           )}
         </div>
         <Pager
