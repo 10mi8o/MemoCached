@@ -1,7 +1,7 @@
-import { fetchLimitPosts } from '../../../services/blog'
-import Layout from '../../../components/Layout'
-import Pager from '../../../components/common/Pager'
-import Card from '../../../components/common/molecules/Card'
+import { fetchLimitPosts } from 'services/blog'
+import Layout from 'components/Layout'
+import Pager from 'components/common/Pager'
+import Card from 'components/common/molecules/Card'
 
 const COUNT_PER_PAGE = 3
 

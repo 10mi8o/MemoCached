@@ -1,7 +1,7 @@
-import { fetchAllPosts, fetchPostByTag, fetchTag } from '../../../services/blog'
+import { fetchAllPosts, fetchPostByTag, fetchTag } from 'services/blog'
 import Link from 'next/link'
-import Layout from '../../../components/Layout'
-import Card from '../../../components/common/molecules/Card'
+import Layout from 'components/Layout'
+import Card from 'components/common/molecules/Card'
 
 export default function PostDetail(props) {
   const posts = props.posts.items
