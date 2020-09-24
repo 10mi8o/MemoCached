@@ -1,7 +1,7 @@
-import { fetchAllPosts, fetchPostBySlug } from '../../services/blog'
+import { fetchAllPosts, fetchPostBySlug } from 'services/blog'
 import Link from 'next/link'
-import Layout from '../../components/Layout'
-import Post from '../../components/blog/Post'
+import Layout from 'components/Layout'
+import Post from 'components/blog/Post'
 
 export default function PostDetail(props) {
   const post = props.post.items

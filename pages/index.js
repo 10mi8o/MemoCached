@@ -1,7 +1,7 @@
+import { fetchAllPosts } from 'services/blog'
 import Link from 'next/link'
-import Layout from '../components/Layout'
-import { fetchAllPosts } from '../services/blog'
-import Card from '../components/common/molecules/Card'
+import Layout from 'components/Layout'
+import Card from 'components/common/molecules/Card'
 
 //記事一覧ページ
 export default function Home(props) {

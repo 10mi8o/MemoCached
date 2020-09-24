@@ -1,6 +1,6 @@
-import PostList from '../../blog/PostList'
-import Label from '../Label'
 import Link from 'next/link'
+import PostList from 'components/blog/PostList'
+import Label from 'components/common/Label'
 
 
 export default function Card(item) {
