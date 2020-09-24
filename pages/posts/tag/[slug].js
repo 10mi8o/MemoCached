@@ -1,9 +1,6 @@
 import { fetchAllPosts, fetchPostByTag, fetchTag } from '../../../services/blog'
-import Head from 'next/head'
-import Header from '../../../components/common/Header'
-import Footer from '../../../components/common/Footer'
 import Link from 'next/link'
-// import Layout from '../../../components/Layout'
+import Layout from '../../../components/Layout'
 import PostList from '../../../components/blog/PostList'
 import Label from '../../../components/common/Label'
 
@@ -11,17 +8,12 @@ export default function PostDetail(props) {
   const posts = props.posts.items
   console.log(posts)
   return(
-    <>
-      <Head>
-        <title>MemoCached</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
+    <Layout>
       <div className="container m-auto py-10">
         <div className="flex flex-wrap">
           {posts.map((post, id) => {
             return(
-              <div key={id} className="w-1/3 px-2 mb-10">
+              <div key={id} className="w-1/3 px-2 flex mb-10">
                 <div className="max-w-sm rounded overflow-hidden shadow-lg">
                   <Link href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
                     <a>
@@ -54,8 +46,7 @@ export default function PostDetail(props) {
           </a>
         </Link>
       </div>
-      <Footer />
-    </>
+    </Layout>
   )
 }
 
