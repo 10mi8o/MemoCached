@@ -12,13 +12,16 @@ export default function PostDetail(props) {
         <div className="flex flex-wrap">
           <Card props={posts}/>
         </div>
-        <Link href="/">
-          <a>
-            <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 my-12 border border-gray-400 rounded shadow">
-              一覧へ戻る
-            </button>
-          </a>
-        </Link>
+
+        <div className="text-center">
+          <Link href="/">
+            <a>
+              <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 my-12 border border-gray-400 rounded shadow">
+                一覧へ戻る
+              </button>
+            </a>
+          </Link>
+        </div>
       </div>
     </Layout>
   )
