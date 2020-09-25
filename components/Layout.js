@@ -22,7 +22,7 @@ const Layout = ({children}) => {
       />
 
       <Header />
-      <div className="md:py-10 lg:px-12">
+      <div className="py-12 lg:px-12">
         <div>
           {children}
         </div>

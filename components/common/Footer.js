@@ -1,7 +1,7 @@
 const Footer = () => {
   return(
     <>
-      <footer className="px-4">
+      <footer className="px-4 py-4">
         <small className="text-center">
           © 2020 memochached
         </small>

@@ -27,13 +27,35 @@ time {
 /* Component */
 
 header {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  border-bottom: 1px solid #000;
+}
+
+header .header-inner {
+  max-width: 1280px;
+}
+
+/* header .main-nav li {
+  margin: 0 1.3rem;
+} */
+
+header .main-nav li a:after {
+	content: '';
+	width: 0;
+	transition: all 0.3s ease;
+	border-bottom: 2px solid #000;
+	display: block;
+}
+header .main-nav li a:hover:after {
+	width: 100%;
+	border-bottom: 2px solid #000;
 }
 
 footer {
   margin-top: auto;
-  background-color: #000000;
-  color: #fff;
+  border-top: 1px solid #000;
+  color: #000;
 }
 
 .card {
