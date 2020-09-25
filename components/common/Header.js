@@ -17,7 +17,7 @@ const Header = () => {
         <nav className="main-nav mt-3 text-base sm:text-lg">
           <ul className="sm:flex">
             <li className="mb-4 sm:mx-5"><a href="/">Archive</a></li>
-            <li className="mb-4 sm:mx-5"><a href="/">About</a></li>
+            <li className="mb-4 sm:mx-5"><a href="/about">About</a></li>
             <li className="mb-4 sm:mx-5"><a href="/">Contact</a></li>
           </ul>
         </nav>
