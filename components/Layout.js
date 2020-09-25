@@ -1,16 +1,28 @@
-import Head from 'next/head'
+import { useRouter } from 'next/router'
 import Header from 'components/common/Header'
 import Footer from 'components/common/Footer'
+import CustomHead from 'components/common/CustomHead'
 
 const Layout = ({children}) => {
+
+  const router = useRouter()
+  const POST_URL = router.asPath
+  // // console.log(POST_URL)  
+  // const post = children.props.children.props.children[0].props
+  // const body = post.body
+  // // console.log(body)
+
   return (
     <>
-      <Head>
-        <title>MemoCached</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <CustomHead
+        title={'MemoCached'}
+        description={'ディスクリプションです'}
+        image={'https://memo-cached.vercel.app/images/react_bnr.png'}
+        url={`https://memo-cached.vercel.app${POST_URL}`}
+      />
+
       <Header />
-      <div className="py-10">
+      <div className="md:py-10 lg:px-12">
         <div>
           {children}
         </div>

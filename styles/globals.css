@@ -53,40 +53,12 @@ footer {
 }
 
 #post_detail .container {
-  width: 680px;
-  margin: 0 auto;
+  max-width: 768px;
 }
 
 #post_detail .container img {
   width: 100%;
   margin: 20px 0;
-}
-
-#post_detail .container h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 1rem 0;
-  padding-bottom: 1rem;
-  border-bottom: solid;
-}
-
-#post_detail .container h2 {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 1.8rem 0 1rem 0;
-  padding-left: 1rem;
-  border-left: solid 10px;
-}
-
-#post_detail .container h3 {
-  font-size: 18px;
-  font-weight: 700;
-}
-
-#post_detail .container p {
-  font-size: 18px;
-  line-height: 2.2;
-  margin-bottom: 1rem;
 }
 
 #post_detail .container a {
@@ -110,4 +82,52 @@ footer {
 
 #post_detail .container blockquote>:last-child {
   margin-bottom: 0;
+}
+
+
+#post_detail .container h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: solid;
+}
+
+#post_detail .container h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 1.8rem 0 1rem 0;
+  padding-left: 1rem;
+  border-left: solid 10px;
+}
+
+#post_detail .container h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+  
+#post_detail .container p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  #post_detail .container h1 {
+    font-size: 32px;
+  }
+  
+  #post_detail .container h2 {
+    font-size: 24px;
+  }
+  
+  #post_detail .container h3 {
+    font-size: 18px;
+  }
+  
+  #post_detail .container p {
+    font-size: 18px;
+    line-height: 2.2;
+    margin-bottom: 1rem;
+  }
 }

@@ -11,7 +11,7 @@ export default function Home(props) {
   return (
     <Layout>
       <div className="container m-auto">
-        <div className="flex flex-wrap ">
+        <div className="md:flex flex-wrap">
           <Card props={posts}/>
         </div>
         { LIMIT <= 16 ? '' :

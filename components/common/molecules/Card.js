@@ -8,8 +8,8 @@ export default function Card(item) {
   return(
     <>
       { posts.map((post, id) => (   
-          <div key={id} className="w-1/3 px-2 mb-10 flex">
-          <div className="card max-w-sm rounded overflow-hidden shadow-lg">
+          <div key={id} className="md:w-1/3 px-5 sm:px-8 md:px-2 mb-10 flex">
+          <div className="card rounded overflow-hidden shadow-lg">
             <Link  href="/posts/[slug]" as={`/posts/${post.fields.slug}`}>
               <a>
                 <PostList 
