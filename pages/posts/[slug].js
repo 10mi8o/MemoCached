@@ -21,7 +21,7 @@ export default function PostDetail(props) {
   return(
     <Layout>
       <div id="post_detail">
-        <div className="container">
+        <div className="container m-auto px-6">
           <Post 
             title={post[0].fields.title} 
             body={post[0].fields.body} 

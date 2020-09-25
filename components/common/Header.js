@@ -3,7 +3,7 @@ import Link from 'next/link'
 const Header = () => {
   return(
     <>
-      <header className="py-10 text-center">
+      <header className="py-3 sm:py-5 md:py-10 text-center">
         <h1 className="font-black line-through">
           <Link href="/">
             <a href="">
