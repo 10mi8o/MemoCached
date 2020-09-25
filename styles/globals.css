@@ -36,10 +36,6 @@ header .header-inner {
   max-width: 1280px;
 }
 
-/* header .main-nav li {
-  margin: 0 1.3rem;
-} */
-
 header .main-nav li a:after {
 	content: '';
 	width: 0;
@@ -152,4 +148,35 @@ footer {
     line-height: 2.2;
     margin-bottom: 1rem;
   }
+}
+
+
+#about.container {
+  max-width: 1024px;
+}
+
+#about .right_box {
+  max-width: 35%;
+}
+
+#about .left_box {
+  width: 60%;
+  margin-left: 5%;
+}
+
+#about .heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#about p {
+  font-size: 0.9rem;
+  line-height: 2.0;
+}
+
+#about .icon {
+  border-radius: 50%;
+  width:  180px;
+  height: 180px;
+  margin-bottom: 20px;
 }
