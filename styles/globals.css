@@ -64,6 +64,10 @@ footer {
   opacity: 0.7;
 }
 
+.codepen {
+  margin-bottom: 1.5rem;
+}
+
 /* Component */
 
 #post_detail {
