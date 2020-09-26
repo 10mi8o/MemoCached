@@ -16,8 +16,8 @@ const Layout = ({children}) => {
     <>
       <CustomHead
         title={'MemoCached'}
-        description={'ディスクリプションです'}
-        image={'https://memo-cached.vercel.app/images/react_bnr.png'}
+        description={'MemoCachedは技術系の小さなトピックを集めたブログです。'}
+        image={'https://memo-cached.vercel.app/images/og_logo.png'}
         url={`https://memo-cached.vercel.app${POST_URL}`}
       />
 
