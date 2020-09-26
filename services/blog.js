@@ -9,6 +9,7 @@ const client = require('contentful').createClient({
 // Contentfulにポストされた記事を全て取得する
 export async function fetchAllPosts() {
   const posts = await client.getEntries({
+    order: '-sys.createdAt',
     content_type: 'blogPost',
   })
   if (posts.items) {
