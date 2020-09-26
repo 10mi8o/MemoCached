@@ -15,7 +15,6 @@ const CustomHead = ({title, description, image, url}) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
     </Head>
   )
 }
