@@ -48,7 +48,7 @@ export default function About() {
             </div> */}
           </section>
           <section className="left_box">
-            <img src="/images/sheep.jpg" alt=""/>
+            <img src="/images/sheep.png" alt=""/>
           </section>
 
         </main>
