@@ -1,4 +1,4 @@
-import ReactMarkdown from 'react-markdown'
+import ReactMarkdown from 'react-markdown/with-html'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
@@ -26,7 +26,7 @@ const Post = ({ title, body, img_url, category }) => {
         />
       </figure>
       <h1>{title}</h1>
-      <ReactMarkdown source={body} renderers={{ code: CodeBlock }}/>
+      <ReactMarkdown source={body} renderers={{ code: CodeBlock }} escapeHtml={false} />
     </>
   )
 }
