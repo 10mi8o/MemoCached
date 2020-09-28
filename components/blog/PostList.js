@@ -7,6 +7,10 @@ const PostList = ({title, createdAt, img_url, category}) => {
     img_url = "/images/react_bnr.png"
   } else if (img_url === "" && category === 'javascript') {
     img_url = "/images/js_bnr.png"
+  } else if (img_url === "" && category === 'redux') {
+    img_url = "/images/redux_bnr.png"
+  } else {
+    img_url = img_url.file.url
   }
 
   return(
