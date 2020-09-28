@@ -3,7 +3,7 @@ import Layout from 'components/Layout'
 import Pager from 'components/common/Pager'
 import Card from 'components/common/molecules/Card'
 
-const COUNT_PER_PAGE = 3
+const COUNT_PER_PAGE = 12
 
 export default function PostDetail(props) {
   const posts = props.posts
