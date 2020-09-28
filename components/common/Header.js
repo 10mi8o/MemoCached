@@ -16,7 +16,9 @@ const Header = () => {
         </h1>
         <nav className="main-nav mt-3 text-base sm:text-lg">
           <ul className="sm:flex">
-            <li className="mb-4 sm:mx-5"><a href="/">Archive</a></li>
+            <Link href="/posts/archive/[num]" as="/posts/archive/1">
+              <li className="mb-4 sm:mx-5"><a href="/archive">Archive</a></li>
+            </Link>
             <li className="mb-4 sm:mx-5"><a href="/about">About</a></li>
             <li className="mb-4 sm:mx-5"><a href="/">Contact</a></li>
           </ul>
