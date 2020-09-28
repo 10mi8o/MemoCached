@@ -12,25 +12,23 @@ const Pager = (props) => {
   if (page < Math.ceil(total / perPage)) {
     nextPage = page + 1
   }
-  console.log(nextPage)
   
   return (
-    <div className="pager text-center">
-      <span className="pager-item">
+    <div className="pager text-center">   
+        {page === 1 &&
+          <a className="pager-item" href="/">← TOP</a>
+        }
         {prevPage ? (
           <Link href={href} as={asCallback(prevPage)}>
-            <a>{prevPage}</a>
+            <a className="pager-item">Prev</a>
           </Link>
         ) : ``}
-      </span>
-      <span className="pager-item">{page}</span>
-      <span className="pager-item">
-        {nextPage ? (
+      <span className="pager-item current">{page}</span>
+        {(nextPage && nextPage !== null) ? (
           <Link href={href} as={asCallback(nextPage)}>
-            <a>{nextPage}</a>
+            <a className="pager-item">Next</a>
           </Link>
         ) : ``}
-      </span>
       <style jsx>{`
         .pager {
           display: flex;
