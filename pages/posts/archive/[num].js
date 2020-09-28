@@ -3,14 +3,14 @@ import Layout from 'components/Layout'
 import Pager from 'components/common/Pager'
 import Card from 'components/common/molecules/Card'
 
-const COUNT_PER_PAGE = 12
+const COUNT_PER_PAGE = 9
 
 export default function PostDetail(props) {
   const posts = props.posts
 
   return(
     <Layout>
-      <div className="container m-auto py-10">
+      <div className="container m-auto">
         <div className="flex flex-wrap">
           <Card props={posts}/>
         </div>
