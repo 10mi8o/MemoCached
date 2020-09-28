@@ -68,6 +68,18 @@ footer {
   margin-bottom: 1.5rem;
 }
 
+.pager-item {
+  border: solid #3d69bd;
+  color: #3d69bd;
+  padding: 10px 20px;
+}
+
+.pager-item.current {
+  background: #3d69bd;
+  color: #FFF;
+  padding: 10px 20px;
+}
+
 /* Component */
 
 #post_detail {
