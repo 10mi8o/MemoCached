@@ -20,11 +20,12 @@ export async function fetchAllPosts() {
 }
 
 // ページネーション周りの実装は要検討
-const MAX_ENTRY = 8;
+// const MAX_ENTRY = 8;
 export async function fetchLimitPosts() {
   const posts = await client.getEntries({
+    order: '-sys.createdAt',
     content_type: 'blogPost',
-    limit: MAX_ENTRY,
+    // limit: MAX_ENTRY,
   })
   return posts.items;
 }
