@@ -3,8 +3,8 @@ import Layout from 'components/Layout'
 export default function About() {
   return(
     <Layout>
-      <div id="about" className="container m-auto">
-        <main className="flex">
+      <div id="about" className="container m-auto px-8 lg:px-0">
+        <main className="md:flex">
           <section className="right_box">
             <div className="mb-5">
               <div className="heading">
@@ -24,8 +24,8 @@ export default function About() {
               {/* <img className="icon" src="/images/icon.png" alt=""/> */}
               <p>
                 <span className="font-bold">富山 健作</span><br />
-                都内在住のWebエンジニアです。フロントからサーバーまで書きますが、フロントの方が書いていて楽しいです。
-                <br />最近は、UXデザインに興味あり。
+                都内在住のWebエンジニアです。フロントからサーバーまで書きます。
+                最近は、UXデザインに興味あり。
               </p>
             </div>
 
