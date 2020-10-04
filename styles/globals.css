@@ -24,6 +24,11 @@ time {
   color: #949494;
 }
 
+/* 暫定対応 */
+pre {
+  margin-bottom: 2.5rem!important; 
+}
+
 /* Component */
 
 header {
